@@ -57,4 +57,5 @@ void	PhoneBook::searchContact(void) const
 void	PhoneBook::printCmds(void) const
 {
 	std::cout << "Following commands are allowed: " << std::endl;
+	std::cout << "\x1B[92m" << " ADD | SEARCH | EXIT" << "\033[0m" << std::endl << std::endl;
 }
