@@ -31,6 +31,21 @@ void	PhoneBook::addContact(void)
 	std::cout << std::endl;
 }
 
+static int	strToInt(std::string str)
+{
+	int	i = 0;
+	int res = 0;
+
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		res = 10 * res + str[i] - '0';
+		i++;
+	}
+	if (str[i])
+		return (-1);
+	return (res);
+}
+
 void	PhoneBook::searchContact(void) const
 {
 	int			index = -1;
@@ -48,9 +63,10 @@ void	PhoneBook::searchContact(void) const
 	{
 		std::cout << "\x1B[92m" << "Enter a valid Index " <<  "\033[0m";
 		std::getline(std::cin, indexStr);
-		index = std::stoi(indexStr);
+		index = strToInt(indexStr);
 	}
-	_contacts[index].displayContactDetails();
+	if (index != -1)
+		_contacts[index].displayContactDetails();
 	std::cout << std::endl;
 }
 

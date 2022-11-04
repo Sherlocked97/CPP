@@ -33,13 +33,14 @@ void	Contact::setIndex(int index)
 
 static void	printTenChar(std::string str)
 {
-	int len;
+	int 		len;
+	std::string	spaces(10, ' ');
 
 	len = str.length();
 	if (len <= 10)
-		std::cout << str;
+		std::cout << spaces.substr(0, 10 - len) << str;
 	else
-		std::cout << str.substr(0, 9);
+		std::cout << str.substr(0, 9) << ".";
 }
 
 void	Contact::displayContact(void) const
