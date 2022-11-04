@@ -18,7 +18,7 @@ $(NAME): $(OBJS)
 clean :
 	@$(RM) $(OBJS)
 
-fclean :
+fclean : clean
 		@$(RM) $(NAME)
 		@echo "$(COLOUR_RED)FCLEAN succesfull!$(COLOUR_END)"
 

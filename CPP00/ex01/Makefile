@@ -8,7 +8,7 @@ RM = rm -rf
 
 NAME = PhoneBook
 SRCS =	src/main.cpp \
-		src/Phonebook.cpp \
+		src/PhoneBook.cpp \
 		src/Contact.cpp
 
 OBJS = $(SRCS:.cpp=.o)
@@ -20,7 +20,7 @@ $(NAME): $(OBJS)
 clean :
 	@$(RM) $(OBJS)
 
-fclean :
+fclean : clean
 		@$(RM) $(NAME)
 		@echo "$(COLOUR_RED)FCLEAN succesfull!$(COLOUR_END)"
 
