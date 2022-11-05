@@ -6,17 +6,19 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = PhoneBook
+NAME = Zombie
 SRCS =	src/main.cpp \
-		src/PhoneBook.cpp \
-		src/Contact.cpp
+		src/newZombie.cpp \
+		src/randomChump.cpp \
+		src/Zombie.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
-	$(NAME): $(OBJS)
+
+$(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME)
-		@echo "$(COLOUR_GREEN)EX01 compilation succesfull!$(COLOUR_END)"
+		@echo "$(COLOUR_GREEN)CPP01 | EX00 compilation succesfull!$(COLOUR_END)"
 
 clean :
 	@$(RM) $(OBJS)
