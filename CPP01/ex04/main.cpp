@@ -37,7 +37,6 @@ int	main(int argc, char **argv)
 			begin = line.find(s1, begin+s2.length());
 			if (begin != line.npos)
 			{
-				std::cout << begin << std::endl;
 				line.erase(begin, s1.length());
 				line.insert(begin, s2);
 			}
