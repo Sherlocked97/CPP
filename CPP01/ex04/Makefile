@@ -6,7 +6,7 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = Files
+NAME = str_replacer
 SRCS =	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
