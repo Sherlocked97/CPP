@@ -6,11 +6,9 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = fight
+NAME = harl
 SRCS =	src/main.cpp \
-		src/Weapon.cpp \
-		src/HumanA.cpp \
-		src/HumanB.cpp
+		src/Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -18,7 +16,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME)
-		@echo "$(COLOUR_GREEN)CPP01 | EX03 compilation succesfull!$(COLOUR_END)"
+		@echo "$(COLOUR_GREEN)CPP01 | EX05 compilation succesfull!$(COLOUR_END)"
 
 clean :
 	@$(RM) $(OBJS)

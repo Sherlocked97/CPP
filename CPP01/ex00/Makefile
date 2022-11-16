@@ -6,7 +6,7 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = Zombie
+NAME = zombie
 SRCS =	src/main.cpp \
 		src/newZombie.cpp \
 		src/randomChump.cpp \
