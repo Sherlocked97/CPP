@@ -10,6 +10,8 @@ class Dog: public Animal
 		Dog(Dog const &src);
 		Dog &operator=(Dog const &other);
 		~Dog();
+
+		void	makeSound() const;
 } ;
 
 #endif

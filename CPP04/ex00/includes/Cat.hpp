@@ -10,6 +10,8 @@ class Cat: public Animal
 		Cat(Cat const &src);
 		Cat &operator=(Cat const &other);
 		~Cat();
+
+		void	makeSound() const;
 } ;
 
 #endif

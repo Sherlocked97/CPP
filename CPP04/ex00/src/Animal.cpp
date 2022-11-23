@@ -13,7 +13,7 @@ Animal::Animal(Animal const &src)
 
 Animal &Animal::operator=(Animal const &other)
 {
-	this->_type = other._type;
+	this->type = other.type;
 	std::cout << "Animal assignment operator called" << std::endl;
 	return (*this);
 }
@@ -25,15 +25,10 @@ Animal::~Animal()
 
 std::string Animal::getType() const
 {
-	return (this->_type);
+	return (this->type);
 }
 
 void	Animal::makeSound() const
 {
-	if (_type.compare("Cat") == 0)
-		std::cout << "Miau Miau" << std::endl;
-	else if (_type.compare("Dog") == 0)
-		std::cout << "Wau Wau" << std::endl;
-	else
-		std::cout << "No known animal sound" << std::endl;
+	std::cout << "No known animal sound" << std::endl;
 }
