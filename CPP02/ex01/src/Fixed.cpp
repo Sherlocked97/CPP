@@ -15,8 +15,6 @@ Fixed::Fixed(const int number)
 Fixed::Fixed(const float number)
 {
 	_fixedPointValue = (int)roundf(number * (1 << _nbrFractBits));
-	// _fixedPointValue = (int) number << _nbrFractBits; (why not like this?)
-	std::cout << _fixedPointValue << std::endl;
 	std::cout << "Float constructor called" << std::endl;
 }
 

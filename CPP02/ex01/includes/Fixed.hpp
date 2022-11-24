@@ -8,12 +8,12 @@ class Fixed
 {
 	private:
 		int					_fixedPointValue;
-		const static int	_nbrFractBits = 8;
+		static const int	_nbrFractBits = 8;
 
 	public:
 		Fixed();
-		Fixed(const int);
-		Fixed(const float);
+		Fixed(const int number);
+		Fixed(const float number);
 		Fixed(const Fixed &fixed);
 		Fixed &operator = (const Fixed &fixed);
 		~Fixed();

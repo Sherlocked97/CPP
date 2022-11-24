@@ -15,7 +15,6 @@ Fixed::Fixed(const int number)
 Fixed::Fixed(const float number)
 {
 	_fixedPointValue = (int)roundf(number * (1 << _nbrFractBits));
-	std::cout << _fixedPointValue << std::endl;
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -123,13 +122,13 @@ Fixed	Fixed::operator/(const Fixed &fixed) const
 /*                      INCREMENT/DECREMENT                      */
 Fixed	&Fixed::operator++(void)
 {
-	++(this->_fixedPointValue);
+	++this->_fixedPointValue;
 	return (*this);
 }
 
 Fixed	&Fixed::operator--(void)
 {
-	--(this->_fixedPointValue);
+	--this->_fixedPointValue;
 	return (*this);
 }
 
@@ -138,7 +137,7 @@ Fixed	Fixed::operator++(int)
 	Fixed	dup(*this);
 
 	this->_fixedPointValue++;
-	return(*this);
+	return(dup);
 }
 
 Fixed	Fixed::operator--(int)
@@ -146,7 +145,7 @@ Fixed	Fixed::operator--(int)
 	Fixed	dup(*this);
 
 	this->_fixedPointValue--;
-	return(*this);
+	return(dup);
 }
 
 
