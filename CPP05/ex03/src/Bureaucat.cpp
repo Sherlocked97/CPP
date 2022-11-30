@@ -72,19 +72,6 @@ void    Bureaucat::signForm(Form &form)
     }
 }
 
-void	Bureaucat::executeForm(Form const &form)
-{
-	try
-	{
-		form.execute(*this);
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << this->getName() << " couldn´t execute " << form.getName() << " because " << e.what() << std::endl;
-	}
-	
-}
-
 std::ostream& operator << (std::ostream& out, const Bureaucat &cat)
 {
 	out << cat.getName();

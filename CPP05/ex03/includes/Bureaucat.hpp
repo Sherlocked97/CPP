@@ -26,7 +26,6 @@ class Bureaucat
 	int		getGrade(void) const;
 	void	getInfos(void) const;
 
-	void	executeForm(Form const &form);
 	void	signForm(Form &form);
 
 	class GradeTooHighException : public std::exception

@@ -1,139 +1,52 @@
+
 #include "../includes/Bureaucat.hpp"
 #include "../includes/Form.hpp"
+#include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
+#include "../includes/PresidentialPardonFrom.hpp"
 
-
-int	main(void) {
-
-	Bureaucat	*soLove;
-	Form		*form;
-
-	std::cout << "\n-------------Asigned---------------\n" << std::endl;
+int main()
+{
 	try {
-		form = NULL;
-		soLove = NULL;
-		soLove = new Bureaucat("Mouad", 4);
-		std::cout << *soLove << std::endl;
-		form = new Form("form", 6, 15);
-		std::cout << *form << std::endl;
-		form->sign(*soLove);
-		std::cout << *form << std::endl;
+		Form *SCF = new ShrubberyCreationForm("home"); // form 145 137
+		Bureaucat b1("Bob", 136);
+        Bureaucat b2("Jhon", 145);
+        b2.signForm(*SCF);
+        b1.executeForm(*SCF);
 
-		delete soLove;
-		delete form;
-		std::cout << "\n" << std::endl;
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-		if (soLove != NULL)
-			delete soLove;
-		if (form != NULL)
-			delete form;
-	}
-	std::cout << "\n-------------Form low---------------\n" << std::endl;
+        b2.executeForm(*SCF);
+        delete SCF;
+    }
+    catch (std::exception & e) {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+	std::cout << std::endl;
 	try {
-		form = NULL;
-		soLove = NULL;
-		soLove = new Bureaucat("Mouad", 3);
-		std::cout << *soLove << std::endl;
-		form = new Form("form", 333, 87);
-		std::cout << "\n" << std::endl;
-		std::cout << *form << std::endl;
-		form->sign(*soLove);
-		std::cout << *form << std::endl;
+        Form *SCF = new RobotomyRequestForm("home"); 
+        Bureaucat b1("Bob2", 44);
+        Bureaucat b2("Jhon2", 72);
+        b2.signForm(*SCF);
+        b1.executeForm(*SCF);
 
-		delete soLove;
-		delete form;
-	}
-	catch (std::exception &e) {
-		if (soLove != NULL)
-			delete soLove;
-		if (form != NULL)
-			delete form;
-		std::cout << e.what() << std::endl;
-	}
+        b2.executeForm(*SCF);
+        delete SCF;
+    }
+    catch (std::exception & e) {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+	std::cout << std::endl;
+    try {
+        Form *SCF = new PresidentialPardonForm("ascii_tree");
+        Bureaucat b1("Bob2", 5);
+        Bureaucat b2("Jhon2", 24);
+        b2.signForm(*SCF);
+        b1.executeForm(*SCF);
 
-	std::cout << "\n-------------Form high---------------\n" << std::endl;
-	try {
-		form = NULL;
-		soLove = NULL;
-		soLove = new Bureaucat("Mouad", 3);
-		std::cout << *soLove << std::endl;
-		form = new Form("form", 0, 87);
-		std::cout << "\n" << std::endl;
-		std::cout << *form << std::endl;
-		form->sign(*soLove);
-		std::cout << *form << std::endl;
-
-		delete soLove;
-		delete form;
-	}
-	catch (std::exception &e) {
-		if (soLove != NULL)
-			delete soLove;
-		if (form != NULL)
-			delete form;
-		std::cout << e.what() << std::endl;
-	}
-
-	std::cout << "\n-------------Form high to Bureaucrat---------------\n" << std::endl;
-	try {
-		form = NULL;
-		soLove = NULL;
-		soLove = new Bureaucat("Mouad", 3);
-		std::cout << *soLove << std::endl;
-		form = new Form("form", 1, 87);
-		std::cout << *form << std::endl;
-		form->sign(*soLove);
-		std::cout << "\n" << std::endl;
-		delete soLove;
-		delete form;
-	}
-	catch (std::exception &e) {
-		if (soLove != NULL)
-			delete soLove;
-		if (form != NULL)
-			delete form;
-		std::cout << e.what() << std::endl;
-	}
-
-    std::cout << "\n-------------Form high to Bureaucrat signForm---------------\n" << std::endl;
-	try {
-		form = NULL;
-		soLove = NULL;
-		soLove = new Bureaucat("Mouad", 3);
-		std::cout << *soLove << std::endl;
-		form = new Form("form", 1, 87);
-		std::cout << *form << std::endl;
-		soLove->signForm(*form);
-		std::cout << "\n" << std::endl;
-		form->sign(*soLove);
-		delete soLove;
-		delete form;
-	}
-	catch (std::exception &e) {
-		if (soLove != NULL)
-			delete soLove;
-		if (form != NULL)
-			delete form;
-		std::cout << e.what() << std::endl;
-	}
-    
-    std::cout << "\n-------------SignForm---------------\n" << std::endl;
-	try {
-    	soLove = new Bureaucat("Mouad", 3);
-    	std::cout << *soLove << std::endl;
-    	form = new Form("form", 7, 87);
-		form->sign(*soLove);
-    	soLove->signForm(*form);
-		delete soLove;
-		delete form;
-	}
-	catch (std::exception &e) {
-		if (soLove != NULL)
-			delete soLove;
-		if (form != NULL)
-			delete form;
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
+        b2.executeForm(*SCF);
+        delete SCF;
+    }
+    catch (std::exception & e) {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+    return (0);
 }

@@ -23,12 +23,9 @@ class Form
 	int const	getGradeForSign(void) const;
 	int	const	getGradeForExecute(void) const;
 	bool const	getSignedStatus(void) const;
-	virtual void action() const = 0;
 
-	void	execute(Bureaucat const &executor) const;
 	void	sign(Bureaucat &cat);
 	
-	virtual Form *clone(std::string target) = 0;
 	class	GradeTooHighException : public std::exception
 	{
 		const char	*what() const throw();

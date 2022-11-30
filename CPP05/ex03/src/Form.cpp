@@ -44,20 +44,6 @@ bool const Form::getSignedStatus() const
 	return (this->isSigned_);
 }
 
-
-void    Form::execute(Bureaucat const &executor) const 
-{
-    if (executor.getGrade() > this->getGradeForExecute())
-        throw Form::GradeTooLowException();
-    if (!this->getSignedStatus())
-    {
-        std::cout << "couldn't execute form because it's not signed" << std::endl;
-        return;
-    }
-    this->action();
-    std::cout << executor.getName() << " executed " << this->getName() << std::endl;
-}
-
 void	Form::sign(Bureaucat &cat)
 {
 	if (cat.getGrade() <= this->gradeForSign_)
@@ -76,11 +62,8 @@ const char	*Form::GradeTooLowException::what() const throw()
 	return ("Grade too low!");
 }
 
-std::ostream    &operator<<(std::ostream &o, const Form &obj)
+std::ostream	&operator<<(std::ostream &out, const Form &form)
 {
-    o << "name: " << obj.getName() << std::endl
-      << "is signed: " << (obj.getSignedStatus() ? "yes" : "no") << std::endl
-      << "grade to sign: " << obj.getGradeForSign() << std::endl
-      << "greade to execute: " << obj.getGradeForExecute() << std::endl;
-    return (o);
+	out << form.getName() << ", form grade " << form.getGradeForSign() << " to sign and " << form.getGradeForExecute() << " to execute";
+	return (out);
 }
