@@ -4,6 +4,9 @@
 #include <iostream>
 #include <exception>
 #include <string>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucat 
 {
@@ -23,10 +26,13 @@ class Bureaucat
 	int		getGrade(void) const;
 	void	getInfos(void) const;
 
+	void	signForm(Form &form);
+
 	class GradeTooHighException : public std::exception
 	{
 		const char	*what() const throw();	
 	} ;
+
 	class GradeTooLowException : public std::exception
 	{
 		const char	*what() const throw();
