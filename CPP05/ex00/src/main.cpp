@@ -2,12 +2,12 @@
 
 int	main()
 {
-	Bureaucat Cat1;
-	Bureaucat Cat2("Cat2", 20);
+	Bureaucat Cat2("Cat2", 150);
 	Bureaucat Cat3 (Cat2);
+	//Bureaucat Cat1("Too High", 0);
+	//Bureaucat Cat4("Too Low", 151);
 
 
-	std::cout << Cat1 << std::endl;
 	std::cout << Cat2 << std::endl;
 	std::cout << Cat3 << std::endl;
 	Cat3.decrement();

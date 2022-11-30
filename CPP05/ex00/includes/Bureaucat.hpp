@@ -19,11 +19,19 @@ class Bureaucat
 
 	void	increment(void);
 	void	decrement(void);
-	bool	gradeTooHigh(void);
-	bool	gradeTooLow(void);
 	std::string	getName(void) const;
 	int		getGrade(void) const;
 	void	getInfos(void) const;
+
+	class GradeTooHighException : public std::exception
+	{
+		const char	*what() const throw();	
+	} ;
+
+	class GradeTooLowException : public std::exception
+	{
+		const char	*what() const throw();
+	} ;
 } ;
 
 std::ostream& operator << (std::ostream& out, const Bureaucat &cat);

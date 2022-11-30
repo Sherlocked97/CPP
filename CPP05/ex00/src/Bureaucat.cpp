@@ -5,30 +5,37 @@ Bureaucat::Bureaucat(): name_("nameless"), grade_(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Bureaucat::Bureaucat(std::string name, int grade): name_(name), grade_(grade)
+Bureaucat::Bureaucat(std::string name, int grade): name_(name)
 {
-	std::cout << "Constructor with args called" << std::endl;
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	else
+		grade_ = grade;
 }
 
 Bureaucat::Bureaucat(Bureaucat const &src)
 {
 	this->name_ = src.name_;
 	this->grade_ = src.grade_;
-	std::cout << "Copy constructor called" << std::endl;
 }
 
 Bureaucat::~Bureaucat()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 void Bureaucat::increment(void)
 {
+	if (this->grade_ == 1)
+		throw GradeTooHighException();
 	this->grade_--;
 }
 
 void Bureaucat::decrement(void)
 {
+	if (this->grade_ == 150)
+		throw GradeTooLowException();
 	this->grade_++;
 }
 
@@ -42,19 +49,16 @@ int	Bureaucat::getGrade(void) const
 	return (this->grade_);
 }
 
-bool	Bureaucat::gradeTooHigh(void)
+const char	*Bureaucat::GradeTooHighException::what() const throw()
 {
-	if (this->grade_ < 1)
-		return (true);
-	return (false);
+	return ("Grade too high!");
 }
 
-bool	Bureaucat::gradeTooLow(void)
+const char	*Bureaucat::GradeTooLowException::what() const throw()
 {
-	if (this->grade_ > 150)
-		return (true);
-	return (false);
+	return ("Grade too low!");
 }
+
 
 std::ostream& operator << (std::ostream& out, const Bureaucat &cat)
 {
