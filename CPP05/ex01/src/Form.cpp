@@ -52,17 +52,17 @@ void	Form::sign(Bureaucat &cat)
 		throw GradeTooLowException();
 }
 
-const char	*Bureaucat::GradeTooHighException::what() const throw()
+const char	*Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high!");
 }
 
-const char	*Bureaucat::GradeTooLowException::what() const throw()
+const char	*Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low!");
 }
 
-std::ostream	&operator<<(std::ostream &out, Form &form)
+std::ostream	&operator<<(std::ostream &out, const Form &form)
 {
 	out << form.getName() << ", form grade " << form.getGradeForSign() << " to sign and " << form.getGradeForExecute() << " to execute";
 	return (out);
