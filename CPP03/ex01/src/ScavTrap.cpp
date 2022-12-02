@@ -1,16 +1,41 @@
 #include "../includes/ScavTrap.hpp"
 
+// --------------------- ORTHODOX CANONICAL CLASS --------------------- //
+
+ScavTrap::ScavTrap(): ClapTrap("Default")
+{
+	setAD(20);
+	setEnergy(50);
+	setHP(100);
+	std::cout << "Scavtrap default constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src)
+{
+	*this = src;
+	std::cout << "Copy constructor called" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &other)
+{	
+	setAD(getAD());
+	setEnergy(getEnergy());
+	setHP(getHP());
+	return (*this);
+}
+
+ScavTrap::~ScavTrap(void)
+{
+	std::cout << "ScavTrap destructor called" << std::endl;
+}
+// ------------------------------------------------------------------ //
+
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
 	setAD(20);
 	setEnergy(50);
 	setHP(100);
-}
-
-ScavTrap::~ScavTrap()
-{
-	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
 void	ScavTrap::guardGate()

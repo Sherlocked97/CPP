@@ -1,14 +1,36 @@
 #include "../includes/ClapTrap.hpp"
 
+// --------------------- ORTHODOX CANONICAL CLASS --------------------- //
 
-ClapTrap::ClapTrap(std::string name): _name(name), _energy(10), _health(10), _attackDamage(0)
+ClapTrap::ClapTrap()
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &src)
+{
+	*this = src;
+	std::cout << "Copy constructor called" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &other)
+{
+	this->_attackDamage = other._attackDamage;
+	this->_energy = other._energy;
+	this->_health = other._health;
+	this->_name = other._name;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destrctor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
+}
+// ------------------------------------------------------------------ //
+
+ClapTrap::ClapTrap(std::string name): _name(name), _energy(10), _health(10), _attackDamage(0)
+{
+	std::cout << "Constructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target)
@@ -59,6 +81,21 @@ void	ClapTrap::setEnergy(int newEnergy)
 void	ClapTrap::setAD(int newAD)
 {
 	this->_attackDamage = newAD;
+}
+
+int	ClapTrap::getAD() const
+{
+	return (this->_attackDamage);
+}
+
+int	ClapTrap::getEnergy() const
+{
+	return(this->_energy);
+}
+
+int	ClapTrap::getHP() const
+{
+	return (this->_health);
 }
 
 std::string	ClapTrap::getName(void) const
