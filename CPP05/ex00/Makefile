@@ -6,9 +6,9 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = exceptions
+NAME = Bureaucrats
 SRCS =	src/main.cpp \
-		src/Bureaucat.cpp
+		src/Bureaucrat.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

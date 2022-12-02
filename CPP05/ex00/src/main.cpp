@@ -1,15 +1,38 @@
-#include "../includes/Bureaucat.hpp"
+#include "../includes/Bureaucrat.hpp"
 
-int	main()
+int main()
 {
-	Bureaucat Cat2("Cat2", 150);
-	Bureaucat Cat3 (Cat2);
-	//Bureaucat Cat1("Too High", 0);
-	//Bureaucat Cat4("Too Low", 151);
-
-
-	std::cout << Cat2 << std::endl;
-	std::cout << Cat3 << std::endl;
-	Cat3.decrement();
-	std::cout << Cat3 << std::endl;
+	try
+	{
+		Bureaucrat test1("Worker", 1);
+		std::cout << test1 << std::endl;
+		test1.decrement();
+		std::cout << test1 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat test2("Worker is to high", 1);
+		std::cout << test2 << std::endl;
+		test2.increment();
+		std::cout << test2 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat test3("Worker is to low", 200);
+		std::cout << test3 << std::endl;
+		test3.increment();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	return (0);
 }
