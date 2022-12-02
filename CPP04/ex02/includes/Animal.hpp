@@ -8,10 +8,10 @@ class Animal
 {
 	protected:
 		std::string _type;
-
-	public:
 		Animal();
 		Animal(Animal const &src);
+
+	public:
 		Animal &operator=(Animal const &other);
 		virtual ~Animal();
 
