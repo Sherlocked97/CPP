@@ -1,11 +1,11 @@
 
 #include "../includes/RobotmyRequestForm.hpp"
 
-RobotmyRequestForm::RobotmyRequestForm(): AForm("Shrubbery Creation", 145, 137), _target("default")
+RobotmyRequestForm::RobotmyRequestForm(): AForm("RobotRequestForm", 72, 45), _target("default")
 {
 }
 
-RobotmyRequestForm::RobotmyRequestForm(const std::string target): AForm("Shrubbery Creation", 145, 137), _target(target)
+RobotmyRequestForm::RobotmyRequestForm(const std::string target): AForm("RobotRequestForm", 72, 45), _target(target)
 {
 }
 
@@ -25,26 +25,17 @@ RobotmyRequestForm &RobotmyRequestForm::operator=(const RobotmyRequestForm &othe
 
 void	RobotmyRequestForm::execute(const Bureaucrat &worker) const
 {
-	std::ofstream outfile;
+	int	robot;
 
 	if (!this->getSignedStatus())
 		throw FormNotSigned();
 	else if (this->getGradeToExecute() < worker.getGrade())
 		throw GradeTooLowException();
-	outfile.open(_target + "_shrubbery");
-	if (outfile.bad())
-		throw FileOpeningFail();
-	outfile << "              v .   ._, |_  .," << std::endl;
-    outfile << "       \'-._\\/  .  \\ /    |/_" << std::endl;
-    outfile << "           \\\\  _\\, y | \\//" << std::endl;
-    outfile << "     _\\_.___\\\\, \\\\/ -.\\||" << std::endl;
-    outfile << "       \'7-,--.\'._||  / / ," << std::endl;
-    outfile << "       /\'     \'-.\'./ / |/_.\'" << std::endl;
-    outfile << "                 |    |//" << std::endl;
-    outfile << "                 |_    /   " << _target << std::endl;
-    outfile << "                 |-   |" << std::endl;
-    outfile << "                 |   =|" << std::endl;
-    outfile << "                 |    |" << std::endl;
-	outfile << "----------------/ ,  . \\--------._" << std::endl;
-	outfile.close();
+	srand(time(NULL));
+	robot = rand() % 2 + 0;
+	std::cout << "bZzzzZZZ rzzzzZZzzzzZZ ";
+	if (robot)
+		std::cout << _target << " was robotmized" << std::endl;
+	else
+		std::cout << _target << " was not robotmized" << std::endl;	
 }

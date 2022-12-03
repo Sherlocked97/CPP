@@ -2,6 +2,7 @@
 #pragma once
 
 #include "AForm.hpp"
+#include <cstdlib>
 
 class RobotmyRequestForm: public AForm
 {

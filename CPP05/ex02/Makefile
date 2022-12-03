@@ -6,10 +6,12 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = Bureaucrats
+NAME = AllKindOfAForms
 SRCS =	src/main.cpp \
 		src/AForm.cpp \
 		src/ShrubberyCreationForm.cpp \
+		src/RobotmyRequestForm.cpp \
+		src/PresidentialPardonForm.cpp \
 		src/Bureaucrat.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
