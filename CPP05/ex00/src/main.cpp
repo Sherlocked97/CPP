@@ -26,9 +26,9 @@ int main()
 	}
 	try
 	{
-		Bureaucrat test3("Worker is to low", 200);
+		Bureaucrat test3("Worker is to low", 150);
 		std::cout << test3 << std::endl;
-		test3.increment();
+		test3.decrement();
 	}
 	catch(const std::exception& e)
 	{
