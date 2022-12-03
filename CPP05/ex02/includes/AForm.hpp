@@ -18,13 +18,14 @@ class AForm
 		AForm(const std::string, const int, const int);
 		AForm(const AForm &src);
 		AForm &operator=(const AForm &other);
-		~AForm();
+		virtual ~AForm();
 
 		std::string	getName() const;
 		int			getGradeToSign() const;
 		int			getGradeToExecute() const;
 		bool		getSignedStatus() const;
 		void		beSigned(Bureaucrat const &worker);
+		virtual void	execute(const Bureaucrat &worker) const = 0;
 
 		class GradeTooHighException: public std::exception
 		{
@@ -43,6 +44,24 @@ class AForm
 					return ("Grade is too low!");
 				}
 		} ;	
+
+		class FormNotSigned: public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Form is not signed yet!");
+				}
+		} ;
+
+		class FileOpeningFail: public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Couldn't open outfile for ShrubberyCreationForm!");
+				}
+		} ;
 
 } ;
 

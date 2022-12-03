@@ -9,6 +9,7 @@ RM = rm -rf
 NAME = Bureaucrats
 SRCS =	src/main.cpp \
 		src/AForm.cpp \
+		src/ShrubberyCreationForm.cpp \
 		src/Bureaucrat.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
