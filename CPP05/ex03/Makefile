@@ -12,6 +12,7 @@ SRCS =	src/main.cpp \
 		src/ShrubberyCreationForm.cpp \
 		src/RobotmyRequestForm.cpp \
 		src/PresidentialPardonForm.cpp \
+		src/Intern.cpp \
 		src/Bureaucrat.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
@@ -20,7 +21,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME)
-		@echo "$(COLOUR_GREEN)CPP05 | EX02 compilation succesfull!$(COLOUR_END)"
+		@echo "$(COLOUR_GREEN)CPP05 | EX03 compilation succesfull!$(COLOUR_END)"
 
 clean :
 	@$(RM) $(OBJS)
