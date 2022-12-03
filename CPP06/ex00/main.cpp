@@ -94,7 +94,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "Use ./convert litteralValue" << std::endl;
+		std::cout << "Use ./static_cast litteralValue" << std::endl;
 		return (1);
 	}
 	input = (std::string) argv[1];
