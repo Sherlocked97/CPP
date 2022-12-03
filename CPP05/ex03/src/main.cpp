@@ -17,6 +17,7 @@ int main()
 		Bureaucrat worker("Official for Shrubbery forms", 1);
 		worker.signForm(*newForm);
 		worker.executeForm(*newForm);
+		delete newForm;
 	}
 	catch(const std::exception& e)
 	{
@@ -31,6 +32,7 @@ int main()
 		Bureaucrat worker("Official for Robot forms", 1);
 		worker.signForm(*newForm);
 		worker.executeForm(*newForm);
+		delete newForm;
 	}
 	catch(const std::exception& e)
 	{
@@ -45,6 +47,7 @@ int main()
 		Bureaucrat worker("Official for Presidential Pardon forms", 3);
 		worker.signForm(*newForm);
 		worker.executeForm(*newForm);
+		delete newForm;
 	}
 	catch(const std::exception& e)
 	{
