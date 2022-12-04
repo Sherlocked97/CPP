@@ -18,9 +18,10 @@ FragTrap::FragTrap(FragTrap const &src): ClapTrap(src)
 
 FragTrap &FragTrap::operator=(FragTrap const &other)
 {	
-	setAD(getAD());
-	setEnergy(getEnergy());
-	setHP(getHP());
+	this->setName(other.getName());
+	this->setAD(other.getAD());
+	this->setEnergy(other.getEnergy());
+	this->setHP(other.getHP());
 	return (*this);
 }
 
@@ -38,7 +39,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 	setHP(100);
 }
 
-void	FragTrap::guardGate()
+void	FragTrap::highFiveGuys()
 {
-	std::cout << "FragTrap \"" << getName() << "\" is now in gatemode" << std::endl;
+	std::cout << "FragTrap \"" << this->getName() << "\" High Fives Guys!" << std::endl;
 }

@@ -18,9 +18,10 @@ ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src)
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {	
-	setAD(getAD());
-	setEnergy(getEnergy());
-	setHP(getHP());
+	this->setName(other.getName());
+	this->setAD(other.getAD());
+	this->setEnergy(other.getEnergy());
+	this->setHP(other.getHP());
 	return (*this);
 }
 
