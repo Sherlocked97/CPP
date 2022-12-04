@@ -2,13 +2,15 @@
 
 // --------------------- ORTHODOX CANONICAL CLASS --------------------- //
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap():_name("default"), _energy(10), _health(10), _attackDamage(0)
 {
+	std::cout << "Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
 	*this = src;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &other)
@@ -22,7 +24,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &other)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destrctor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 // ------------------------------------------------------------------ //
 

@@ -14,4 +14,7 @@ int	main()
 	fighterOne.beRepaired(10);
 	fighterOne.takeDamage(4);
 	fighterOne.getInfos();
+	fighterOne.takeDamage(20);
+	fighterOne.getInfos();
+	fighterOne.attack("dead");
 }
