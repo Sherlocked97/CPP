@@ -7,9 +7,9 @@
 class Animal
 {
 	protected:
-		std::string _type;
 		Animal();
 		Animal(Animal const &src);
+		std::string _type;
 
 	public:
 		Animal &operator=(Animal const &other);

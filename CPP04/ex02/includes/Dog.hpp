@@ -16,6 +16,7 @@ class Dog: public Animal
 		~Dog();
 
 		void	makeSound() const;
+		void	printIdeas() const;
 } ;
 
 #endif

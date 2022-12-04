@@ -16,6 +16,7 @@ Dog::Dog(const Dog &src)
 Dog &Dog::operator=(Dog const &other)
 {
 	this->_type = other._type;
+	*(this->_brain) = *(other._brain);
 	std::cout << "Dog assigment operator called" << std::endl;
 	return(*this);
 }
@@ -29,4 +30,10 @@ Dog::~Dog()
 void	Dog::makeSound() const
 {
 	std::cout << "Wau Wau" << std::endl;
+}
+
+void	Dog::printIdeas() const
+{
+	this->_brain->printFirst10Ideas();
+	std::cout << "Dogs brain has this ideas" << std::endl;
 }

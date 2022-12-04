@@ -16,6 +16,7 @@ Cat::Cat(const Cat &src)
 Cat &Cat::operator=(Cat const &other)
 {
 	this->_type = other._type;
+	*(this->_brain) = *(other._brain);
 	std::cout << "Cat assigment operator called" << std::endl;
 	return(*this);
 }
@@ -29,4 +30,10 @@ Cat::~Cat()
 void	Cat::makeSound() const
 {
 	std::cout << "Miau Miau" << std::endl;
+}
+
+void	Cat::printIdeas() const
+{
+	this->_brain->printFirst10Ideas();
+	std::cout << "Cats brain has this ideas" << std::endl;
 }
