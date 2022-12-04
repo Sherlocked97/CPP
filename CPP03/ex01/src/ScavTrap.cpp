@@ -17,10 +17,11 @@ ScavTrap::ScavTrap(ScavTrap const &src): ClapTrap(src)
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
-{	
-	setAD(getAD());
-	setEnergy(getEnergy());
-	setHP(getHP());
+{
+	this->setName(other.getName());
+	this->setAD(other.getAD());
+	this->setEnergy(other.getEnergy());
+	this->setHP(other.getHP());
 	return (*this);
 }
 
@@ -33,9 +34,9 @@ ScavTrap::~ScavTrap(void)
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
-	setAD(20);
-	setEnergy(50);
-	setHP(100);
+	this->setAD(20);
+	this->setEnergy(50);
+	this->setHP(100);
 }
 
 void	ScavTrap::guardGate()

@@ -28,6 +28,7 @@ class ClapTrap
 		void		setAD(int newAD);
 		int			getAD(void) const;
 		std::string	getName(void) const;
+		void		setName(std::string newName);
 		void		getInfos(void) const;
 } ;
 

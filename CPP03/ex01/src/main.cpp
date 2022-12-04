@@ -8,6 +8,7 @@ int	main()
 
 	test.getInfos();
 	test = fighterTwo;
+	test.takeDamage(43);
 	test.getInfos();
 	fighterTwo.guardGate();
 	fighterTwo.getInfos();

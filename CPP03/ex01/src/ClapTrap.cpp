@@ -83,6 +83,11 @@ void	ClapTrap::setAD(int newAD)
 	this->_attackDamage = newAD;
 }
 
+void	ClapTrap::setName(std::string newName)
+{
+	this->_name = newName;
+}
+
 int	ClapTrap::getAD() const
 {
 	return (this->_attackDamage);
