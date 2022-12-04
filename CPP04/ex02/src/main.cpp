@@ -20,7 +20,6 @@ void	creation(int size)
 void deepCopy()
 {
 	Cat cat1;
-	for (long i = 0; i < 1000000000; i++);
 	Cat cat2;
 
 	cat1.printIdeas();

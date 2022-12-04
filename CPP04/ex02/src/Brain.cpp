@@ -6,8 +6,10 @@
 Brain::Brain()
 {
 	std::string string;
+	static int test;
 
-	srand(time(NULL));
+	srand(test);
+	test++;
 	for (int i = 0; i < 100; i++)
 	{
 
