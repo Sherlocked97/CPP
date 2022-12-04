@@ -1,10 +1,19 @@
 
 #include "../includes/Brain.hpp"
-
+#include <string>
 // --------------------- ORTHODOX CANONICAL CLASS --------------------- //
 
 Brain::Brain()
 {
+	std::string string;
+
+	srand(time(NULL));
+	for (int i = 0; i < 100; i++)
+	{
+
+		string = std::to_string(std::rand() % 10 + 0);
+		this->_ideas[i] = "Test Idea" + string;
+	}
 	std::cout << "Default brain constructor called" << std::endl;
 }
 
@@ -37,4 +46,10 @@ std::string	Brain::getIdea(int i) const
 void	Brain::setIdea(int i, std::string idea)
 {
 	this->_ideas[i] = idea;
+}
+
+void	Brain::printFirst10Ideas() const
+{
+	for (int i = 0; i < 10; i++)
+		std::cout << this->_ideas[i] << std::endl;
 }
