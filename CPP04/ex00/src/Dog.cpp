@@ -15,7 +15,6 @@ Dog::Dog(const Dog &src)
 Dog &Dog::operator=(Dog const &other)
 {
 	this->_type = other._type;
-	std::cout << "Dog assigment operator called" << std::endl;
 	return(*this);
 }
 

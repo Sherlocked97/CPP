@@ -15,7 +15,6 @@ Cat::Cat(const Cat &src)
 Cat &Cat::operator=(Cat const &other)
 {
 	this->_type = other._type;
-	std::cout << "Cat assigment operator called" << std::endl;
 	return(*this);
 }
 

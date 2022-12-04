@@ -34,6 +34,7 @@ FragTrap::~FragTrap(void)
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
 	std::cout << "FragTrap constructor called" << std::endl;
+	ClapTrap::attack("Name");
 	setAD(20);
 	setEnergy(50);
 	setHP(100);

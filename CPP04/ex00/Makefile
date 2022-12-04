@@ -9,8 +9,10 @@ RM = rm -rf
 NAME = Animals
 SRCS =	src/main.cpp \
 		src/Animal.cpp \
+		src/WrongAnimal.cpp \
 		src/Dog.cpp \
-		src/Cat.cpp
+		src/Cat.cpp \
+		src/WrongCat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

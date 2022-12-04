@@ -4,7 +4,8 @@ int	main()
 {
 	ClapTrap fighterOne("ClapTrap");
 	ScavTrap fighterTwo("ScavTrap");
-	ScavTrap test;
+	ScavTrap test = fighterTwo;
+	ScavTrap test2(test);
 
 	test.getInfos();
 	test = fighterTwo;
