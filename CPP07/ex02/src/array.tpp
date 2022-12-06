@@ -47,7 +47,7 @@ Array<T>::~Array()
 template<typename T>
 T &Array<T>::operator[](unsigned int index) const
 {
-	if (index >= _len)
+	if (index >= _len || index < 0)
 		throw Array::outOfRange();
 	return (this->_array[index]);
 }
