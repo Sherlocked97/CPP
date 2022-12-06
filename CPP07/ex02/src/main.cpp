@@ -47,6 +47,14 @@ int main(int, char **)
 
 	for (int i = 0; i < MAX_VAL; i++)
 		numbers[i] = rand();
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		if (mirror[i] != numbers[i])
+		{
+			std::cerr << "didn't save the same value!!" << std::endl;
+			return 1;
+		}
+	}
 	delete[] mirror;
 	return 0;
 }
