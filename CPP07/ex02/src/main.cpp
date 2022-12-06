@@ -37,7 +37,8 @@ int main(int, char **)
 	}
 	try
 	{
-		numbers[MAX_VAL] = 0;
+		numbers[3] = 0;
+		std::cout << numbers[3] << " and has this size: " << numbers.size() << std::endl;
 	}
 	catch (const std::exception &e)
 	{

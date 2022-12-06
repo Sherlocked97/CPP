@@ -6,7 +6,7 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = array
+NAME = my_own_array_template
 SRCS =	src/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
@@ -15,7 +15,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME)
-		@echo "$(COLOUR_GREEN)CPP07 | EX01 compilation succesfull!$(COLOUR_END)"
+		@echo "$(COLOUR_GREEN)CPP07 | EX02 compilation succesfull!$(COLOUR_END)"
 
 clean :
 	@$(RM) $(OBJS)
