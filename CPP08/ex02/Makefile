@@ -6,8 +6,8 @@ COLOUR_END = \033[0m
 CC = c++ -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-NAME = containers___finally
-SRCS =	src/main.cpp
+NAME = MutantStack
+SRCS =	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -15,7 +15,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME)
-		@echo "$(COLOUR_GREEN)CPP08 | EX00 compilation succesfull!$(COLOUR_END)"
+		@echo "$(COLOUR_GREEN)CPP08 | EX02 compilation succesfull!$(COLOUR_END)"
 
 clean :
 	@$(RM) $(OBJS)
