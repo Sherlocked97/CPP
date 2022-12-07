@@ -1,12 +1,13 @@
 
 #include "MutantStack.hpp"
 #include <vector>
+#include <deque>
 #include <iostream>
 
 
 void	testVector(void)
 {
-	std::vector<int>	mstack;
+	std::deque<int>	mstack;
 
 	mstack.push_back(5);
 	mstack.push_back(17);
@@ -23,8 +24,8 @@ void	testVector(void)
 	mstack.push_back(-12);
 	mstack.push_back(0);
 
-	std::vector<int>::iterator	it = mstack.begin();
-	std::vector<int>::iterator	ite = mstack.end();
+	std::deque<int>::iterator	it = mstack.begin();
+	std::deque<int>::iterator	ite = mstack.end();
 
 	++it;
 	--it;

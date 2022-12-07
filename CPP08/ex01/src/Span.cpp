@@ -62,7 +62,7 @@ int	Span::shortestSpan() const
 
 int	Span::getSize() const
 {
-	return ((int) this->_stored);
+	return (static_cast<int>(this->_stored));
 }
 
 int Span::getData(int index) const
