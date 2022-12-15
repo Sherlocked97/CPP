@@ -30,12 +30,15 @@ Intern::~Intern()
 
 AForm	*Intern::makeForm(std::string name, std::string target) const
 {
-	if (name.compare("shrubbery creation form") == 0)
-		return (forms[0]->formWithName(target));
-	else if (name.compare("robot my request form") == 0)
-		return (forms[1]->formWithName(target));
-	else if (name.compare("presidential pardon form") == 0)
-		return (forms[2]->formWithName(target));
-	else
+	int i = 0;
+
+	while (i < 3)
+	{
+		if (target.compare(forms[i]->getName()) == 0)
+			break;
+		i++;
+	}
+	if (i == 3)
 		throw FormNotFound();
+	return (forms[i]->formWithName(target));
 }

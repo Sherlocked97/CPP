@@ -20,8 +20,10 @@ Data *deserialize(uintptr_t res)
 int	main()
 {
 	Data data = {0, 1};
+	// Data test = {0, 2};
 
 	Data *ptr = deserialize(serialize(&data));
+	// Data *ptr = &test;
 	std::cout << ptr << " | " << &data << std::endl;
 	std::cout << (ptr == &data ? "The same pointer" : "Pointers are different") << std::endl;
 	std::cout << sizeof(ptr) << " | " << sizeof(&data) << std::endl;
