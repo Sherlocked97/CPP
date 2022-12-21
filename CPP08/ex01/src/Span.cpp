@@ -1,13 +1,9 @@
 
 #include "../includes/Span.hpp"
 
-Span::Span(): _N(0), _stored(0)
-{
-}
+Span::Span(): _N(0), _stored(0) {}
 
-Span::Span(const unsigned int N): _N(N), _stored(0)
-{
-}
+Span::Span(const unsigned int N): _N(N), _stored(0) {}
 
 Span::Span(const Span &src)
 {
@@ -50,14 +46,18 @@ int	Span::longestSpan() const
 
 int	Span::shortestSpan() const 
 {
-	std::vector<int> copy = _data;
-	long		minSpan = std::numeric_limits<long>::max();
-
 	if (_stored < 2)
 		throw Span::notEnoughNumbers();
-	for (int i = 0; (i + 1) < (int) _data.size(); i++)
-		minSpan = std::min(minSpan, static_cast<long>(copy[i + 1]  - copy[i]));
-	return(minSpan);
+
+	std::vector<int> copy = _data;
+	std::sort(copy.begin(), copy.end());
+	int	min = copy[1] - copy[0];	
+	for (int i = 1; i < _data.size() - 1; i++)
+	{
+		if (copy[i + 1] - copy[i] < min)
+			min = copy[i + 1] - copy[i];
+	}
+	return(min);
 }
 
 int	Span::getSize() const

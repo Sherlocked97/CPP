@@ -23,6 +23,7 @@ int	main()
 		std::array<int, 2> arr;
 		arr[0] = 4;
 		arr[1] = 5;
+		// int	easy = easyfind(arr2, 10);
 		std::cout << "found at " << easyfind(arr2, 5) << std::endl;
 		easyfind(arr, 5);
 	}
