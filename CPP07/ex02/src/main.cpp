@@ -27,9 +27,10 @@ int main(int, char **)
 			return 1;
 		}
 	}
+	std::cout << "They are the same" << std::endl;
 	try
 	{
-		numbers[-2] = 0;
+		numbers[2] = 0;
 	}
 	catch (const std::exception &e)
 	{
