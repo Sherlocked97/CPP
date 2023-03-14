@@ -9,7 +9,7 @@ bool	onlyDigit(std::string s)
 			&& s[i] != '*' 
 			&& s[i] != '-' 
 			&& s[i] != '+'
-			&& i != 0)
+			|| i > 0)
 			return (false);
 	}
 	return (true);
@@ -21,11 +21,9 @@ double	getResult(std::vector<char> parts)
 	std::vector<char>::iterator it = parts.begin();
 
 	result = *it - 48;
-	std::cout << "Itterator: " << *it << " Result in calc: " << result << std::endl;
 	it++;
 	while (it != parts.end() - 1)
 	{
-		std::cout << "Itterator: " << *it << " Result in calc: " << result << std::endl;
 		if (*(it + 1) == '+')
 			result += (*it - 48);
 		else if (*(it + 1) == '-')
