@@ -23,6 +23,9 @@ run: all
 test: all
 	./$(NAME) 3 2 6 8 4 1 23 12
 
+test2: all
+	./$(NAME) 1 8 7 6 2 345 75 23 56 86 120 344 123 543 3 9 0
+
 clean :
 	@$(RM) $(OBJS)
 
