@@ -42,6 +42,22 @@ PmergeMe::~PmergeMe()
 	_dequeToSort.clear();
 }
 
+PmergeMe::PmergeMe(const PmergeMe &other)
+{
+	*this = other;
+}
+
+PmergeMe	&PmergeMe::operator=(const PmergeMe &other)
+{
+	this->_dequeToSort.clear();
+	this->_listToSort.clear();
+
+	this->_listToSort = other._listToSort;
+	this->_dequeToSort = other._dequeToSort;
+	return (*this);
+}
+
+
 std::string getTimeStr(timespec start, timespec end)
 {
 	double runSec = end.tv_sec - start.tv_sec;

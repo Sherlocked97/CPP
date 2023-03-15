@@ -25,7 +25,7 @@ bool	isOperator(std::string s)
 	return (true);
 }
 
-double	calculateResult(double result, char mode, std::vector<char>& nums)
+void	calculateResult(double& result, char mode, std::vector<char>& nums)
 {
 	int size = nums.size();		
 
@@ -53,7 +53,7 @@ double	calculateResult(double result, char mode, std::vector<char>& nums)
 		{
 			for (int i = 0; i < size; i++)
 			{
-				result *= nums[nums.size() - 1] - '0';
+				result *= (nums[nums.size() - 1] - '0');
 				nums.pop_back();
 			}
 		}
@@ -68,7 +68,6 @@ double	calculateResult(double result, char mode, std::vector<char>& nums)
 		}
 		break ;
 	}
-	return (result);
 }
 
 void	rpn(std::string input)
@@ -83,14 +82,20 @@ void	rpn(std::string input)
 	{
 		if (onlyDigit(c))
 		{
-			parts.push_back(c.c_str()[0]);
+			if (first)
+			{
+				result = c.c_str()[0] - '0';
+				first = false;
+			}
+			else
+				parts.push_back(c.c_str()[0]);
 		}
 		else if (isOperator(c))
 		{
 			if (parts.size() == 0)
 					;
 			else
-				result = calculateResult(result, c[0], parts);
+				calculateResult(result, c[0], parts);
 		}
 		else
 		{

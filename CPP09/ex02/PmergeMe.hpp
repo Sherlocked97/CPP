@@ -16,6 +16,8 @@ class PmergeMe
 
 	public:
 		PmergeMe(char **numbers);
+		PmergeMe(const PmergeMe &other);
+		PmergeMe &operator=(const PmergeMe &other);
 		~PmergeMe();
 	
 

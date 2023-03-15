@@ -17,6 +17,15 @@ $(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME)
 		@echo "$(COLOUR_GREEN)CPP09 | EX01 compilation succesfull!$(COLOUR_END)"
 
+test: all
+	./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
+	./$(NAME) "7 7 * 7 -"
+	./$(NAME) "3 4 - 5 +"
+	./$(NAME) "3 4 * 5 +"
+	./$(NAME) "(3 4) - 5 +"
+	./$(NAME) "3 13 - 5 +"
+	./$(NAME) "a 1 - 5 +"
+
 clean :
 	@$(RM) $(OBJS)
 

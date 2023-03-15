@@ -15,6 +15,8 @@ class BCExchange
 	
 	public:
 		BCExchange();
+		BCExchange(const BCExchange &other);
+		BCExchange &operator=(const BCExchange &other);
 		~BCExchange();
 
 		void	parseDatabase();

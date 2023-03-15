@@ -10,6 +10,21 @@ BCExchange::~BCExchange()
 	_database.clear();
 }
 
+BCExchange::BCExchange(const BCExchange &other)
+{
+	*this = other;
+}
+
+BCExchange	&BCExchange::operator=(const BCExchange &other)
+{
+	this->_database.clear();
+	this->_userRequests.clear();
+
+	this->_database = other._database;
+	this->_userRequests = other._userRequests;
+	return (*this);
+}
+
 void BCExchange::parseDatabase()
 {
 	std::string line;
