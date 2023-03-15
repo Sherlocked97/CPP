@@ -25,78 +25,56 @@ bool	isOperator(std::string s)
 	return (true);
 }
 
-void	calculateResult(double& result, char mode, std::vector<char>& nums)
+void	calculateResult(char mode, std::vector<int>& nums)
 {
 	int size = nums.size();		
+	int		operator1;
+	int		operator2;
 
-	switch (mode)
+	if (nums.size() > 1)
 	{
-		case '+':
+		operator2 = nums[nums.size() - 1];
+		nums.pop_back();
+		operator1 = nums[nums.size() - 1];
+		nums.pop_back();
+		switch (mode)
 		{
-			for (int i = 0; i < size; i++)
-			{
-				result += nums[nums.size() - 1] - '0';
-				nums.pop_back();
-			}
+			case '+':
+				nums.push_back(operator1 + operator2);
+			break ;
+			case '-':
+				nums.push_back(operator1 - operator2);
+			break ;
+			case '*':
+				nums.push_back(operator1 * operator2);
+			break ;
+			case '/':
+				if (operator2 == 0)
+					{
+						nums.clear();
+						return ;
+					}
+				else
+					nums.push_back(operator1 / operator2);
+			break ;
 		}
-		break ;
-		case '-':
-		{
-			for (int i = 0; i < size; i++)
-			{
-				result -= nums[nums.size() - 1] - '0';
-				nums.pop_back();
-			}
-		}
-		break ;
-		case '*':
-		{
-			for (int i = 0; i < size; i++)
-			{
-				result *= (nums[nums.size() - 1] - '0');
-				nums.pop_back();
-			}
-		}
-		break ;
-		case '/':
-		{
-			for (int i = 0; i < size; i++)
-			{
-				result /= nums[nums.size() - 1] - '0';
-				nums.pop_back();
-			}
-		}
-		break ;
 	}
+	else
+		return ;
 }
 
 void	rpn(std::string input)
 {
-	std::vector<char>	parts;
+	std::vector<int>	parts;
 	std::string 		c;
-	double		 		result;
-	bool				first = true;
 
 	std::stringstream str(input);
 	while (getline(str, c, ' '))
 	{
 		if (onlyDigit(c))
-		{
-			if (first)
-			{
-				result = c.c_str()[0] - '0';
-				first = false;
-			}
-			else
-				parts.push_back(c.c_str()[0]);
-		}
+			parts.push_back(c.c_str()[0] - '0');
 		else if (isOperator(c))
-		{
-			if (parts.size() == 0)
-					;
-			else
-				calculateResult(result, c[0], parts);
-		}
+			calculateResult(c[0], parts);
 		else
 		{
 			std::cout << "Wrong input: " << c << "\nOnly integers from 0 - 9 are allowed!" << std::endl;
@@ -104,11 +82,11 @@ void	rpn(std::string input)
 			return ;
 		}
 	}
-	if (!parts.empty())
+	if (parts.size() > 1)
 	{
-			std::cout << "Wrong input: last argument is not an operator" << std::endl;
+			std::cout << "Wrong input!" << std::endl;
 			parts.clear();
 	}
 	else
-		std::cout << "Result: " << result << std::endl;
+		std::cout << "Result: " << parts[0] << std::endl;
 }
