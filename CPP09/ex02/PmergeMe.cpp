@@ -143,7 +143,9 @@ void	PmergeMe::mergeList(std::list<int>::iterator begin, std::list<int>::iterato
 			while (it != left)
 			{
 				std::list<int>::iterator tmp = it;
-				*it-- = *--tmp;
+				tmp--;
+				*it = *tmp;
+				it--;
 			}
 			*left = value;
 			mid++;
@@ -164,7 +166,7 @@ void	PmergeMe::sortList(std::list<int>::iterator begin, std::list<int>::iterator
 		 i < size / 2; ++i)
 		++mid;
 	sortList(begin, mid);
-	sortList(++mid, end);
+	sortList(mid, end);
 	mergeList(begin, mid, end);
 }
 
